@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/utils/app_colors.dart';
+import 'package:get/get.dart';
 
 class Skills extends StatelessWidget {
   const Skills({super.key});
@@ -26,14 +27,14 @@ class Skills extends StatelessWidget {
                   text: 'My ',
                   style: TextStyle(
                     color: AppColors.textColor,
-                    fontSize: isMobile ? 30.sp : 48.sp,
+                    fontSize: isMobile ? Get.width * 0.06 : 48.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 TextSpan(
                   text: 'Skills',
                   style: TextStyle(
-                    fontSize: isMobile ? 30.sp : 48.sp,
+                    fontSize: isMobile ? Get.width * 0.06 : 48.sp,
                     fontWeight: FontWeight.bold,
                     foreground:
                     Paint()

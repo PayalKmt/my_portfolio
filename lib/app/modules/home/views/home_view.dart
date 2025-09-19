@@ -34,7 +34,7 @@ class HomeView extends GetView<HomeController> {
                   text: TextSpan(
                     text: 'Portfolio',
                     style: TextStyle(
-                      fontSize: 25.sp,
+                      fontSize: 50.sp,
                       fontWeight: FontWeight.bold,
                         foreground: Paint()
                           ..shader = LinearGradient(
@@ -76,7 +76,7 @@ class HomeView extends GetView<HomeController> {
               key: controller.homeKey, // Assign GlobalKey
               padding: EdgeInsets.symmetric(
                 horizontal: isMobile ? 20.w : 80.w,
-                vertical: isMobile ? 30.h : 80.h,
+                vertical: isMobile ? 10.h : 80.h,
               ),
               child: Flex(
                 direction: isMobile ? Axis.vertical : Axis.horizontal,
@@ -99,13 +99,13 @@ class HomeView extends GetView<HomeController> {
                           "Hello, I'm",
                           style: TextStyle(
                             color: AppColors.secondaryColor,
-                            fontSize: isMobile ? 24.sp : 38.sp,
+                            fontSize: isMobile ? Get.width * 0.05 : 38.sp,
                             fontWeight: FontWeight.w600,
                           ),
                           textAlign:
                               isMobile ? TextAlign.center : TextAlign.left,
                         ),
-                        SizedBox(height: 10.h),
+                        SizedBox(height: 30.w),
                         RichText(
                           text: TextSpan(
                             children: [
@@ -113,14 +113,14 @@ class HomeView extends GetView<HomeController> {
                                 text: "Payal ",
                                 style: TextStyle(
                                   color: AppColors.textColor,
-                                  fontSize: isMobile ? 35.sp : 85.sp,
+                                  fontSize: isMobile ? Get.width * 0.08 : 85.sp,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               TextSpan(
                                 text: "Kumawat",
                                 style: TextStyle(
-                                  fontSize: isMobile ? 35.sp : 85.sp,
+                                  fontSize: isMobile ? Get.width * 0.08 : 85.sp,
                                   fontWeight: FontWeight.bold,
                                   foreground: Paint()
                                     ..shader = LinearGradient(
@@ -139,11 +139,11 @@ class HomeView extends GetView<HomeController> {
                           textAlign:
                               isMobile ? TextAlign.center : TextAlign.left,
                         ),
-                        SizedBox(height: 10.h),
+                        SizedBox(height: 30.w),
                         DefaultTextStyle(
                           style: TextStyle(
                             color: AppColors.secondaryColor,
-                            fontSize: isMobile ? 28.sp : 45.sp,
+                            fontSize: isMobile ? Get.width * 0.055 : 45.sp,
                             fontWeight: FontWeight.w700
                           ),
                           textAlign: isMobile ? TextAlign.center : TextAlign.left,
@@ -156,17 +156,17 @@ class HomeView extends GetView<HomeController> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 20.h),
+                        SizedBox(height: 40.w),
                         Text(
                           "A passionate Computer Science Engineering student with expertise in App development using Flutter, React, and Node.js.",
                           style: TextStyle(
                             color: AppColors.textLightColor,
-                            fontSize: isMobile ? 16.sp : 25.sp,
+                            fontSize: isMobile ? Get.width * 0.035 : 25.sp,
                           ),
                           textAlign:
                               isMobile ? TextAlign.center : TextAlign.left,
                         ),
-                        SizedBox(height: 40.h),
+                        SizedBox(height: isMobile ? 75.w : 40.h),
                         // Action Buttons
                         Wrap(
                           spacing: 30.w,
@@ -183,8 +183,8 @@ class HomeView extends GetView<HomeController> {
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: AppColors.buttonColor,
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: isMobile ? 25.w :38.h,
-                                  vertical: isMobile ? 10.h : 24.w,
+                                  horizontal: isMobile ? 25.h :38.h,
+                                  vertical: isMobile ? 10.w : 24.w,
                                 ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10.r),
@@ -195,7 +195,7 @@ class HomeView extends GetView<HomeController> {
                                 'Get In Touch',
                                 style: TextStyle(
                                   color: AppColors.textColor,
-                                  fontSize: isMobile ? 18.sp : 25.sp,
+                                  fontSize: isMobile ? 50.sp : 25.sp,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -221,14 +221,14 @@ class HomeView extends GetView<HomeController> {
                                 'View Projects',
                                 style: TextStyle(
                                   color: AppColors.buttonBorderColor,
-                                  fontSize: isMobile ? 18.sp : 25.sp,
+                                  fontSize: isMobile ? 50.sp : 25.sp,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(height: isMobile ? 40.h :55.h),
+                        SizedBox(height: isMobile ? 40.w :55.h),
                         // Social Media Icons
                         Row(
                           mainAxisAlignment:
@@ -244,7 +244,7 @@ class HomeView extends GetView<HomeController> {
                               icon: FaIcon(
                                 FontAwesomeIcons.linkedinIn,
                                 color: AppColors.socialIconColor,
-                                size: isMobile ? 30.sp : 40.sp,
+                                size: isMobile ? Get.width * 0.06 : 40.sp,
                               ),
                             ),
                             SizedBox(width: 20.w),
@@ -256,7 +256,7 @@ class HomeView extends GetView<HomeController> {
                               icon: FaIcon(
                                 FontAwesomeIcons.github,
                                 color: AppColors.socialIconColor,
-                                size: isMobile ? 30.sp : 40.sp,
+                                size: isMobile ? Get.width * 0.06 : 40.sp,
                               ),
                             ),
                             SizedBox(width: 20.w),
@@ -268,7 +268,7 @@ class HomeView extends GetView<HomeController> {
                               icon: FaIcon(
                                 FontAwesomeIcons.envelope,
                                 color: AppColors.socialIconColor,
-                                size: isMobile ? 30.sp : 40.sp,
+                                size: isMobile ? Get.width * 0.06 : 40.sp,
                               ),
                             ),
                             SizedBox(width: 20.w),
@@ -280,7 +280,7 @@ class HomeView extends GetView<HomeController> {
                               icon: FaIcon(
                                 FontAwesomeIcons.code,
                                 color: AppColors.socialIconColor,
-                                size: isMobile ? 30.sp : 40.sp,
+                                size: isMobile ? Get.width * 0.06 : 40.sp,
                               ),
                             ),
                           ],
@@ -306,7 +306,7 @@ class HomeView extends GetView<HomeController> {
                               ),
                               width:
                                   isMobile
-                                      ? MediaQuery.of(context).size.width * 0.8
+                                      ? MediaQuery.of(context).size.width * 0.75
                                       : 900.w,
                               height:
                                   isMobile
@@ -347,16 +347,22 @@ class HomeView extends GetView<HomeController> {
                 ],
               ),
             ),
+            if(isMobile) SizedBox(height: Get.height * 0.05,),
             // About Section
             SizedBox(key: controller.aboutKey, child: const About()),
+            if(isMobile) SizedBox(height: Get.height * 0.05,),
             // Skills Section
             SizedBox(key: controller.skillsKey, child: const Skills()),
+            if(isMobile) SizedBox(height: Get.height * 0.05,),
             // Experience Section
             SizedBox(key: controller.experienceKey, child: const Experience()),
+            if(isMobile) SizedBox(height: Get.height * 0.05,),
             // Projects Section
             SizedBox(key: controller.projectsKey, child: const Projects()),
+            if(isMobile) SizedBox(height: Get.height * 0.05,),
             // Education Section
             SizedBox(key: controller.educationKey, child: const Education()),
+            if(isMobile) SizedBox(height: Get.height * 0.05,),
             // Contact Section
             SizedBox(key: controller.contactKey, child: const ContactMe()),
             // Footer

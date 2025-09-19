@@ -101,9 +101,16 @@ class NavBar extends GetView<HomeController> {
 class MobileDrawer extends GetView<HomeController> {
   const MobileDrawer({super.key});
 
-  Widget _drawerNavItem(String title) {
+  Widget _drawerNavItem(String title, IconData icon) {
     return Obx(
       () => ListTile(
+        leading: Icon(
+          icon,
+          color:
+              controller.activeSection.value == title
+                  ? AppColors.secondaryColor
+                  : AppColors.textColor,
+        ),
         title: Text(
           title,
           style: TextStyle(
@@ -111,7 +118,7 @@ class MobileDrawer extends GetView<HomeController> {
                 controller.activeSection.value == title
                     ? AppColors.secondaryColor
                     : AppColors.textColor,
-            fontSize: 18.sp,
+            fontSize: 60.sp,
             fontWeight:
                 controller.activeSection.value == title
                     ? FontWeight.bold
@@ -129,6 +136,7 @@ class MobileDrawer extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      width: Get.width * 0.6,
       backgroundColor: AppColors.backgroundColor,
       child: ListView(
         padding: EdgeInsets.zero,
@@ -140,38 +148,43 @@ class MobileDrawer extends GetView<HomeController> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  radius: 45.r,
+                  radius: 200.r,
                   backgroundImage: AssetImage("images/profile_pic.jpeg"),
                 ),
-                SizedBox(width: 10.w),
+                SizedBox(width: 50.w),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Payal Kumawat", style: TextStyle(
+                    Text(
+                      "Payal Kumawat",
+                      style: TextStyle(
                         color: AppColors.secondary2Color,
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w600
-                    )),
-                    SizedBox(height: 5.h,),
-                    Text("Flutter Developer", style: TextStyle(
+                        fontSize: 60.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(height: 5.h),
+                    Text(
+                      "Flutter Developer",
+                      style: TextStyle(
                         color: AppColors.textLightColor,
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w600
-                    )),
+                        fontSize: 45.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ],
-                )
-
+                ),
               ],
             ),
           ),
-          _drawerNavItem('Home'),
-          _drawerNavItem('About'),
-          _drawerNavItem('Skills'),
-          _drawerNavItem('Experience'),
-          _drawerNavItem('Projects'),
-          _drawerNavItem('Education'),
-          _drawerNavItem('Contact'),
+          _drawerNavItem('Home', Icons.home),
+          _drawerNavItem('About', Icons.person),
+          _drawerNavItem('Skills', Icons.psychology),
+          _drawerNavItem('Experience', Icons.work),
+          _drawerNavItem('Projects', Icons.workspaces),
+          _drawerNavItem('Education', Icons.school),
+          _drawerNavItem('Contact', Icons.email),
         ],
       ),
     );

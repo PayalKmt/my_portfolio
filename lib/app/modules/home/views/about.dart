@@ -27,14 +27,14 @@ class About extends GetView<HomeController> {
                   text: 'About ',
                   style: TextStyle(
                     color: AppColors.textColor,
-                    fontSize: isMobile ? 30.sp : 48.sp,
+                    fontSize: isMobile ? Get.width * 0.06 : 48.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 TextSpan(
                   text: 'Me',
                   style: TextStyle(
-                    fontSize: isMobile ? 30.sp : 48.sp,
+                    fontSize: isMobile ? Get.width * 0.06 : 48.sp,
                     fontWeight: FontWeight.bold,
                     foreground:
                         Paint()
@@ -50,8 +50,8 @@ class About extends GetView<HomeController> {
             ),
           ),
           Container(
-            width: isMobile ? 100.w : 190.w,
-            height: isMobile ? 4.h : 6.h,
+            width: isMobile ? 150.w : 190.w,
+            height: isMobile ? 2.h : 6.h,
             color: AppColors.secondaryColor,
             margin: EdgeInsets.only(top: 10.h, bottom: 40.h),
           ),
@@ -65,7 +65,7 @@ class About extends GetView<HomeController> {
                 flex: isMobile ? 0 : 2,
                 child: Padding(
                   padding: EdgeInsets.only(
-                    bottom: isMobile ? 40.h : 0.h,
+                    bottom: isMobile ? 30.h : 0.h,
                     right: isMobile ? 0.h : 50.h,
                   ),
                   child: ClipRRect(
@@ -79,14 +79,14 @@ class About extends GetView<HomeController> {
                         ),
                         width:
                             isMobile
-                                ? 700.w
+                                ? MediaQuery.of(context).size.width * 0.75
                                 : 320.w,
                         height:
                             isMobile
-                                ? 250.w
+                                ? MediaQuery.of(context).size.width * 0.5
                                 : 670.w,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.r),
+                          borderRadius: BorderRadius.circular(40.r),
                           // border: Border.all(
                           //   color: Colors.grey.shade600,
                           //   width: 2,
@@ -129,7 +129,7 @@ class About extends GetView<HomeController> {
                       "I'm Payal Kumawat, a Flutter Developer",
                       style: TextStyle(
                         color: AppColors.primaryColor,
-                        fontSize: isMobile ? 24.sp : 44.sp,
+                        fontSize: isMobile ? Get.width * 0.04 : 44.sp,
                         fontWeight: FontWeight.bold,
                       ),
                       textAlign: isMobile ? TextAlign.center : TextAlign.left,
@@ -139,7 +139,7 @@ class About extends GetView<HomeController> {
                       "As a 3rd year student of Computer Science and Engineering, I am excited about the opportunity to develop my skills in App development and Web development. My experience with Dart, Flutter, Getx, Bloc, Html, CSS, JavaScript, React, Node.js, Express.js, Mongo DB, MySQL, Canvas, Android Studio, Visual Studio Code and Git version control has prepared me for creating functional and user-friendly mobile applications and web applications.",
                       style: TextStyle(
                         color: AppColors.textLightColor,
-                        fontSize: isMobile ? 16.sp : 25.sp,
+                        fontSize: isMobile ? Get.width * 0.035 : 25.sp,
                       ),
                       textAlign: isMobile ? TextAlign.center : TextAlign.left,
                     ),
@@ -148,7 +148,7 @@ class About extends GetView<HomeController> {
                       "I'm passionate about building elegant solutions that solve real-world problems. My goal is to continue growing as a developer by taking on challenging projects and expanding my technical expertise.",
                       style: TextStyle(
                         color: AppColors.textLightColor,
-                        fontSize: isMobile ? 16.sp : 25.sp,
+                        fontSize: isMobile ? Get.width * 0.035 : 25.sp,
                       ),
                       textAlign: isMobile ? TextAlign.center : TextAlign.left,
                     ),
@@ -178,7 +178,7 @@ class About extends GetView<HomeController> {
   Widget _buildStatCard(BuildContext context, String count, String label) {
     bool isMobile = 1.sw < 800; // Smaller breakpoint for cards
     return Container(
-      width: isMobile ? 125.w : 400.w,
+      width: isMobile ? Get.width * 0.5 : 400.w,
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: AppColors.cardColor,
@@ -197,7 +197,7 @@ class About extends GetView<HomeController> {
             count,
             style: TextStyle(
               color: AppColors.secondaryColor,
-              fontSize: isMobile ? 32.sp : 60.sp,
+              fontSize: isMobile ? Get.width * 0.05 : 60.sp,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -206,7 +206,7 @@ class About extends GetView<HomeController> {
             label,
             style: TextStyle(
               color: AppColors.textColor,
-              fontSize: isMobile ? 18.sp : 40.sp,
+              fontSize: isMobile ? Get.width * 0.04 : 40.sp,
               fontWeight: FontWeight.w500,
             ),
             textAlign: TextAlign.center,
