@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:get/get.dart';
 import '../../../../utils/app_colors.dart';
 
 class Experience extends StatelessWidget {
@@ -26,14 +26,14 @@ class Experience extends StatelessWidget {
                   text: 'Internship ',
                   style: TextStyle(
                     color: AppColors.textColor,
-                    fontSize: isMobile ? 30.sp : 48.sp,
+                    fontSize: isMobile ? Get.width * 0.06 : 48.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 TextSpan(
                   text: 'Experience',
                   style: TextStyle(
-                    fontSize: isMobile ? 30.sp : 48.sp,
+                    fontSize: isMobile ? Get.width * 0.06 : 48.sp,
                     fontWeight: FontWeight.bold,
                     foreground:
                     Paint()
@@ -50,7 +50,7 @@ class Experience extends StatelessWidget {
           ),
           Container(
             width: isMobile ? 200.w : 400.w,
-            height: isMobile ? 4.h :6.h,
+            height: isMobile ? 2.h :6.h,
             color: AppColors.secondaryColor,
             margin: EdgeInsets.only(top: 10.h, bottom: 40.h),
           ),
@@ -173,7 +173,7 @@ class Experience extends StatelessWidget {
         horizontal: isMobile ? 15.w : 25.w, // scales with screen width
         vertical: isMobile ? 15.h : 25.h,   // scales with screen height
       ),
-      height: isMobile ? 400.h : 450.h,
+      height: isMobile ? 390.h : 450.h,
       decoration: BoxDecoration(
         color: AppColors.cardColor,
         borderRadius: BorderRadius.circular(15.r),
@@ -199,7 +199,7 @@ class Experience extends StatelessWidget {
               style: TextStyle(
                 backgroundColor: AppColors.primaryColor,
                 color: AppColors.textColor,
-                fontSize: isMobile ? 16.sp : 24.sp,
+                fontSize: isMobile ? Get.width * 0.035 : 24.sp,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -209,7 +209,7 @@ class Experience extends StatelessWidget {
             experience['title']!,
             style: TextStyle(
               color: AppColors.secondaryColor,
-              fontSize: isMobile ? 25.sp : 32.sp,
+              fontSize: isMobile ? Get.width * 0.05 : 32.sp,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -217,7 +217,7 @@ class Experience extends StatelessWidget {
             experience['company']!,
             style: TextStyle(
               color: AppColors.textColor,
-              fontSize: isMobile ? 20.sp : 24.sp,
+              fontSize: isMobile ? Get.width * 0.03 : 24.sp,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -226,7 +226,7 @@ class Experience extends StatelessWidget {
             experience['description']!,
             style: TextStyle(
               color: AppColors.textLightColor,
-              fontSize: isMobile ? 16.sp : 25.sp,
+              fontSize: isMobile ? Get.width * 0.035 : 25.sp,
             ),
           ),
         ],
