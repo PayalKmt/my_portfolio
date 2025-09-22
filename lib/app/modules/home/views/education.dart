@@ -27,14 +27,14 @@ class Education extends StatelessWidget {
                   text: 'My ',
                   style: TextStyle(
                     color: AppColors.textColor,
-                    fontSize: isMobile ? 30.sp : 48.sp,
+                    fontSize: isMobile ? Get.width * 0.06 : 48.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 TextSpan(
                   text: 'Education',
                   style: TextStyle(
-                    fontSize: isMobile ? 30.sp : 48.sp,
+                    fontSize: isMobile ? Get.width * 0.06 : 48.sp,
                     fontWeight: FontWeight.bold,
                     foreground:
                     Paint()
@@ -50,8 +50,8 @@ class Education extends StatelessWidget {
             ),
           ),
           Container(
-            width: isMobile ? 100.w : 190.w,
-            height: isMobile ? 4.h : 6.h,
+            width: isMobile ? 150.w : 190.w,
+            height: isMobile ? 2.h : 6.h,
             color: AppColors.secondaryColor,
             margin: EdgeInsets.only(top: 10.h, bottom: 40.h),
           ),
@@ -62,7 +62,7 @@ class Education extends StatelessWidget {
               crossAxisCount: isMobile ? 1 : isTablet ? 2 : 3, // 1 column on mobile, 3 on desktop
               crossAxisSpacing: isMobile ? 20.w : 30.w,
               mainAxisSpacing: isMobile ? 20.h : 30.h,
-              childAspectRatio: isMobile ? 0.9 : isTablet ? 1.2 : 0.9, // Adjust aspect ratio for cards
+              childAspectRatio: isMobile ? 1.2 : isTablet ? 1.2 : 0.9, // Adjust aspect ratio for cards
             ),
             itemCount: _educationEntries.length,
             itemBuilder: (context, index) {
@@ -77,7 +77,8 @@ class Education extends StatelessWidget {
 
   Widget _buildEducationCard(BuildContext context, Map<String, dynamic> entry, bool isMobile) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 25.h),
+      margin: EdgeInsets.symmetric(horizontal: 50.w),
+      padding: EdgeInsets.symmetric(horizontal: isMobile ? 35.w : 25.w, vertical: 25.h),
       decoration: BoxDecoration(
         color: AppColors.cardColor,
         borderRadius: BorderRadius.circular(15.r),
@@ -103,7 +104,7 @@ class Education extends StatelessWidget {
               style: TextStyle(
                 backgroundColor: AppColors.primaryColor,
                 color: AppColors.textColor,
-                fontSize: isMobile ? 16.sp : 30.sp,
+                fontSize: isMobile ? Get.width * 0.035 : 30.sp,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -113,7 +114,7 @@ class Education extends StatelessWidget {
             entry['degree']!,
             style: TextStyle(
               color: AppColors.secondaryColor,
-              fontSize: isMobile ? 25.sp :38.sp,
+              fontSize: isMobile ? Get.width * 0.06 :38.sp,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -121,7 +122,7 @@ class Education extends StatelessWidget {
             entry['institution']!,
             style: TextStyle(
               color: AppColors.textColor,
-              fontSize: isMobile ? 20.sp : 30.sp,
+              fontSize: isMobile ? Get.width * 0.05 : 30.sp,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -130,7 +131,7 @@ class Education extends StatelessWidget {
             entry['description']!,
             style: TextStyle(
               color: AppColors.textLightColor,
-              fontSize: isMobile ? 16.sp : 25.sp,
+              fontSize: isMobile ? Get.width * 0.035 : 25.sp,
             ),
           ),
           if (entry['grade'] != null) ...[
@@ -139,7 +140,7 @@ class Education extends StatelessWidget {
               entry['grade']!,
               style: TextStyle(
                 color: AppColors.textColor,
-                fontSize: isMobile ? 16.sp : 25.sp,
+                fontSize: isMobile ? Get.width * 0.035 : 25.sp,
                 fontWeight: FontWeight.w600,
               ),
             ),

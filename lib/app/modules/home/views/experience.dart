@@ -170,7 +170,7 @@ class Experience extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 20.h).copyWith(right: 8.w, left: 8.w),
       padding: EdgeInsets.symmetric(
-        horizontal: isMobile ? 15.w : 25.w, // scales with screen width
+        horizontal: isMobile ? 20.w : 25.w, // scales with screen width
         vertical: isMobile ? 15.h : 25.h,   // scales with screen height
       ),
       height: isMobile ? 390.h : 450.h,
@@ -189,7 +189,7 @@ class Experience extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
+            padding: EdgeInsets.symmetric(horizontal: isMobile? 30.w : 12.w, vertical: 5.h),
             decoration: BoxDecoration(
               color: AppColors.primaryColor.withValues(alpha: 5),
               borderRadius: BorderRadius.circular(7.r),

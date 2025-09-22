@@ -192,7 +192,7 @@ class Projects extends StatelessWidget {
                     },
                     child: Text(
                       'Github Link',
-                      style: TextStyle(color: AppColors.primaryColor, fontSize: isMobile ? 16.sp : 22.sp),
+                      style: TextStyle(color: AppColors.primaryColor, fontSize: isMobile ? Get.width * 0.035 : 22.sp),
                     ),
                   ),
                 ),
