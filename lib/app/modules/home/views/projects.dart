@@ -29,14 +29,14 @@ class Projects extends StatelessWidget {
                   text: 'My ',
                   style: TextStyle(
                     color: AppColors.textColor,
-                    fontSize: isMobile ? 30.sp : 48.sp,
+                    fontSize: isMobile ? Get.width * 0.06 : 48.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 TextSpan(
                   text: 'Projects',
                   style: TextStyle(
-                    fontSize: isMobile ? 30.sp : 48.sp,
+                    fontSize: isMobile ? Get.width * 0.06 : 48.sp,
                     fontWeight: FontWeight.bold,
                     foreground:
                     Paint()
@@ -52,14 +52,14 @@ class Projects extends StatelessWidget {
             ),
           ),
           Container(
-            width: isMobile ? 100.w : 190.w,
-            height: isMobile ? 4.h : 6.h,
+            width: isMobile ? 150.w : 190.w,
+            height: isMobile ? 2.h : 6.h,
             color: AppColors.secondaryColor,
             margin: EdgeInsets.only(top: 10.h, bottom: 40.h),
           ),
           // Project categories (AI, Flutter, Web, Android) - as buttons
           Wrap(
-            spacing: 15.w,
+            spacing: isMobile ? 30.w :15.w,
             runSpacing: 15.h,
             alignment: WrapAlignment.center,
             children: [
@@ -79,7 +79,7 @@ class Projects extends StatelessWidget {
               crossAxisCount: isMobile ? 1 : isTablet ? 2 : 3, // 1 column on mobile, 3 on desktop
               crossAxisSpacing: isMobile ? 20.w : 30.w,
               mainAxisSpacing: isMobile ? 20.h : 30.h,
-              childAspectRatio: isMobile ? 0.45 : isTablet ? 0.6 : 0.5, // Adjust aspect ratio for cards
+              childAspectRatio: isMobile ? 0.74 : isTablet ? 0.6 : 0.5, // Adjust aspect ratio for cards
             ),
             itemCount: _projects.length,
             itemBuilder: (context, index) {
@@ -112,7 +112,7 @@ class Projects extends StatelessWidget {
         category,
         style: TextStyle(
           color: AppColors.textColor,
-          fontSize: isMobile ? 16.sp : 25.sp,
+          fontSize: isMobile ? Get.width * 0.028 : 25.sp,
           fontWeight: FontWeight.w500,
         ),
       ),
@@ -121,6 +121,7 @@ class Projects extends StatelessWidget {
 
   Widget _buildProjectCard(BuildContext context, Map<String, dynamic> project, bool isMobile) {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 50.w),
       decoration: BoxDecoration(
         color: AppColors.cardColor,
         borderRadius: BorderRadius.circular(15.r),
@@ -140,7 +141,7 @@ class Projects extends StatelessWidget {
             child: Image.network(
               project['imageUrl']!,
               fit: BoxFit.cover,
-              height: 600.h, // Fixed height for image
+              height: isMobile ? 400.h : 600.h, // Fixed height for image
               width: double.infinity,
               errorBuilder: (context, error, stackTrace) {
                 return Container(
@@ -165,7 +166,7 @@ class Projects extends StatelessWidget {
                   project['title']!,
                   style: TextStyle(
                     color: AppColors.secondaryColor,
-                    fontSize: isMobile ? 25.sp : 40.sp,
+                    fontSize: isMobile ? Get.width * 0.06 : 40.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -174,7 +175,7 @@ class Projects extends StatelessWidget {
                   project['description']!,
                   style: TextStyle(
                     color: AppColors.textLightColor,
-                    fontSize: isMobile ? 16.sp : 25.sp,
+                    fontSize: isMobile ? Get.width * 0.035 : 25.sp,
                   ),
                   maxLines: 4,
                   overflow: TextOverflow.ellipsis,
