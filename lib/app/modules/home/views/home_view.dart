@@ -34,7 +34,7 @@ class HomeView extends GetView<HomeController> {
                   text: TextSpan(
                     text: 'Portfolio',
                     style: TextStyle(
-                      fontSize: 50.sp,
+                      fontSize: Get.width * 0.06,
                       fontWeight: FontWeight.bold,
                         foreground: Paint()
                           ..shader = LinearGradient(
