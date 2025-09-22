@@ -28,14 +28,14 @@ class ContactMe extends GetView<HomeController> {
                   text: 'Contact  ',
                   style: TextStyle(
                     color: AppColors.textColor,
-                    fontSize: isMobile ? 30.sp : 48.sp,
+                    fontSize: isMobile ? Get.width * 0.06 : 48.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 TextSpan(
                   text: 'Me',
                   style: TextStyle(
-                    fontSize: isMobile ? 30.sp : 48.sp,
+                    fontSize: isMobile ? Get.width * 0.06 : 48.sp,
                     fontWeight: FontWeight.bold,
                     foreground:
                     Paint()
@@ -51,8 +51,8 @@ class ContactMe extends GetView<HomeController> {
             ),
           ),
           Container(
-            width: isMobile ? 100.w : 190.w,
-            height: isMobile ? 4.h : 6.h,
+            width: isMobile ? 150.w : 190.w,
+            height: isMobile ? 2.h : 6.h,
             color: AppColors.secondaryColor,
             margin: EdgeInsets.only(top: 10.h, bottom: 40.h),
           ),
@@ -153,7 +153,7 @@ class ContactMe extends GetView<HomeController> {
                           'Send Message',
                           style: TextStyle(
                             color: AppColors.textColor,
-                            fontSize: isMobile ? 16.sp : 28.sp,
+                            fontSize: isMobile ? Get.width * 0.035 : 28.sp,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -178,8 +178,8 @@ class ContactMe extends GetView<HomeController> {
         child: Row(
           mainAxisSize: isMobile ? MainAxisSize.max : MainAxisSize.min, // To wrap content
           children: [
-            FaIcon(icon, color: AppColors.primaryColor, size: isMobile ? 22.sp : 30.sp),
-            SizedBox(width: isMobile ? 20.w : 30.w),
+            FaIcon(icon, color: AppColors.primaryColor, size: isMobile ? Get.width * 0.035 : 30.sp),
+            SizedBox(width: isMobile ? 40.w : 30.w),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -187,7 +187,7 @@ class ContactMe extends GetView<HomeController> {
                   title,
                   style: TextStyle(
                     color: AppColors.textLightColor,
-                    fontSize: isMobile ? 18.sp : 27.sp,
+                    fontSize: isMobile ? Get.width * 0.025 : 27.sp,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -195,7 +195,7 @@ class ContactMe extends GetView<HomeController> {
                   value,
                   style: TextStyle(
                     color: AppColors.textColor,
-                    fontSize: isMobile ? 16.sp : 30.sp,
+                    fontSize: isMobile ? Get.width * 0.025 : 30.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

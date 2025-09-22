@@ -18,7 +18,7 @@ class Footer extends GetView<HomeController> {
         title,
         style: TextStyle(
           color: AppColors.textLightColor,
-          fontSize: isMobile ? 16.sp : 25.sp,
+          fontSize: isMobile ? Get.width * 0.035 : 25.sp,
         ),
       ),
     );
@@ -51,7 +51,7 @@ class Footer extends GetView<HomeController> {
                       'PayalKumawat',
                       style: TextStyle(
                         color: AppColors.textColor,
-                        fontSize: isMobile ? 24.sp : 35.sp,
+                        fontSize: isMobile ? Get.width * 0.06 : 35.sp,
                         fontWeight: FontWeight.bold,
                       ),
                       textAlign: isMobile ? TextAlign.center : TextAlign.left,
@@ -61,7 +61,7 @@ class Footer extends GetView<HomeController> {
                       'A passionate Flutter and Web Developer specializing in creating beautiful, functional, and user-friendly applications.',
                       style: TextStyle(
                         color: AppColors.textLightColor,
-                        fontSize: isMobile ? 15.sp : 25.sp,
+                        fontSize: isMobile ? Get.width * 0.035 : 25.sp,
                       ),
                       textAlign: isMobile ? TextAlign.center : TextAlign.left,
                     ),
@@ -71,22 +71,22 @@ class Footer extends GetView<HomeController> {
                       children: [
                         IconButton(
                           onPressed: () => controller.openUrl('https://www.linkedin.com/in/payal-kumawat-664973302/'),
-                          icon: FaIcon(FontAwesomeIcons.linkedinIn, color: AppColors.socialIconColor, size: isMobile ? 25.sp : 30.sp),
+                          icon: FaIcon(FontAwesomeIcons.linkedinIn, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 : 30.sp),
                         ),
                         SizedBox(width: 20.w),
                         IconButton(
                           onPressed: () => controller.openUrl('https://github.com/PayalKmt'),
-                          icon: FaIcon(FontAwesomeIcons.github, color: AppColors.socialIconColor, size: isMobile ? 25.sp :30.sp),
+                          icon: FaIcon(FontAwesomeIcons.github, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 :30.sp),
                         ),
                         SizedBox(width: 20.w),
                         IconButton(
                           onPressed: () => controller.openUrl('mailto:kumawatpayal2005513@gmail.com'),
-                          icon: FaIcon(FontAwesomeIcons.envelope, color: AppColors.socialIconColor, size: isMobile ? 25.sp :30.sp),
+                          icon: FaIcon(FontAwesomeIcons.envelope, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 :30.sp),
                         ),
                         SizedBox(width: 20.w),
                         IconButton(
                           onPressed: () => controller.openUrl('https://leetcode.com/u/kumawatpayal2005513/'),
-                          icon: FaIcon(FontAwesomeIcons.code, color: AppColors.socialIconColor, size: isMobile ? 25.sp :30.sp),
+                          icon: FaIcon(FontAwesomeIcons.code, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 :30.sp),
                         ),
                       ],
                     ),
@@ -109,13 +109,13 @@ class Footer extends GetView<HomeController> {
                           'Quick Links',
                           style: TextStyle(
                             color: AppColors.textColor,
-                            fontSize: isMobile ? 20.sp : 30.sp,
+                            fontSize: isMobile ? Get.width * 0.035 : 30.sp,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: isMobile ? TextAlign.center : TextAlign.left,
                         ),
                         Container(
-                          width: isMobile ? 60.w : 120.w,
+                          width: isMobile ? 160.w : 120.w,
                           height: 5.h,
                           color: AppColors.secondaryColor,
                           margin: EdgeInsets.only(top: 10.h, bottom: isMobile ? 20.h : 15.h),
@@ -141,7 +141,7 @@ class Footer extends GetView<HomeController> {
                           'Languages',
                           style: TextStyle(
                             color: AppColors.textColor,
-                            fontSize: isMobile ? 20.sp : 30.sp,
+                            fontSize: isMobile ? Get.width * 0.035 : 30.sp,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: isMobile ? TextAlign.center : TextAlign.left,
@@ -156,7 +156,7 @@ class Footer extends GetView<HomeController> {
                           'English',
                           style: TextStyle(
                             color: AppColors.textLightColor,
-                            fontSize: isMobile ? 16.sp : 25.sp,
+                            fontSize: isMobile ? Get.width * 0.035 : 25.sp,
                           ),
                           textAlign: isMobile ? TextAlign.center : TextAlign.left,
                         ),
@@ -165,7 +165,7 @@ class Footer extends GetView<HomeController> {
                           'Hindi',
                           style: TextStyle(
                             color: AppColors.textLightColor,
-                            fontSize: isMobile ? 16.sp : 25.sp,
+                            fontSize: isMobile ? Get.width * 0.035 : 25.sp,
                           ),
                           textAlign: isMobile ? TextAlign.center : TextAlign.left,
                         ),
@@ -184,13 +184,13 @@ class Footer extends GetView<HomeController> {
                       'Quick Links',
                       style: TextStyle(
                         color: AppColors.textColor,
-                        fontSize: isMobile ? 20.sp : 30.sp,
+                        fontSize: isMobile ? Get.width * 0.035 : 30.sp,
                         fontWeight: FontWeight.bold,
                       ),
                       textAlign: isMobile ? TextAlign.center : TextAlign.left,
                     ),
                     Container(
-                      width: isMobile ? 60.w : 120.w,
+                      width: isMobile ? Get.width*0.3 : 120.w,
                       height: 5.h,
                       color: AppColors.secondaryColor,
                       margin: EdgeInsets.only(top: 10.h, bottom: isMobile ? 20.h : 15.h),
@@ -217,7 +217,7 @@ class Footer extends GetView<HomeController> {
                       'Languages',
                       style: TextStyle(
                         color: AppColors.textColor,
-                        fontSize: isMobile ? 20.sp : 30.sp,
+                        fontSize: isMobile ? Get.width * 0.035 : 30.sp,
                         fontWeight: FontWeight.bold,
                       ),
                       textAlign: isMobile ? TextAlign.center : TextAlign.left,
@@ -232,7 +232,7 @@ class Footer extends GetView<HomeController> {
                       'English',
                       style: TextStyle(
                         color: AppColors.textLightColor,
-                        fontSize: isMobile ? 16.sp : 25.sp,
+                        fontSize: isMobile ? Get.width * 0.035 : 25.sp,
                       ),
                       textAlign: isMobile ? TextAlign.center : TextAlign.left,
                     ),
@@ -241,7 +241,7 @@ class Footer extends GetView<HomeController> {
                       'Hindi',
                       style: TextStyle(
                         color: AppColors.textLightColor,
-                        fontSize: isMobile ? 16.sp : 25.sp,
+                        fontSize: isMobile ? Get.width * 0.035 : 25.sp,
                       ),
                       textAlign: isMobile ? TextAlign.center : TextAlign.left,
                     ),
@@ -256,7 +256,7 @@ class Footer extends GetView<HomeController> {
             '© 2024 Payal Kumawat. All rights reserved.',
             style: TextStyle(
               color: AppColors.textLightColor,
-              fontSize: isMobile ? 14.sp : 20.sp,
+              fontSize: isMobile ? Get.width * 0.035 : 20.sp,
             ),
             textAlign: TextAlign.center,
           ),
