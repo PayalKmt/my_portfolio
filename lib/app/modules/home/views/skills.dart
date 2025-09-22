@@ -50,8 +50,8 @@ class Skills extends StatelessWidget {
             ),
           ),
           Container(
-            width: isMobile ? 100.w : 190.w,
-            height: isMobile ? 4.h : 6.h,
+            width: isMobile ? 150.w : 190.w,
+            height: isMobile ? 2.h : 6.h,
             margin: EdgeInsets.only(top: 10.h, bottom: 40.h),
             color: AppColors.secondaryColor,
           ),
@@ -71,7 +71,7 @@ class Skills extends StatelessWidget {
                   crossAxisCount: crossAxisCount,
                   crossAxisSpacing: 60.w,
                   mainAxisSpacing: 50.h,
-                  childAspectRatio: isMobile ? 1.0 : isTablet ? 1.5 :  0.8,
+                  childAspectRatio: isMobile ? 1.4 : isTablet ? 1.5 :  0.8,
                 ),
                 itemCount: _skillCategories.length,
                 itemBuilder: (context, index) {
@@ -104,7 +104,8 @@ class Skills extends StatelessWidget {
     return ConstrainedBox(
       constraints: BoxConstraints(maxWidth: maxWidth),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: isMobile ? 20.w : 40.w, vertical: isMobile ? 20.h : 40.h),
+        margin: EdgeInsets.symmetric(horizontal: isMobile ? Get.width * 0.07 : 0), // Add margin,
+        padding: EdgeInsets.symmetric(horizontal: isMobile ? 80.w : 40.w, vertical: isMobile ? 20.h : 40.h),
         decoration: BoxDecoration(
           color: AppColors.cardColor,
           borderRadius: BorderRadius.circular(15.r),
@@ -121,13 +122,13 @@ class Skills extends StatelessWidget {
           children: [
             Row(
               children: [
-                FaIcon(icon, color: Colors.blueAccent, size: isMobile ? 22.sp : 40.sp),
+                FaIcon(icon, color: Colors.blueAccent, size: isMobile ? Get.width * 0.06 : 40.sp),
                 SizedBox(width: 15.w),
                 Text(
                   title,
                   style: TextStyle(
                     color: AppColors.textColor,
-                    fontSize: isMobile ? 22.sp :30.sp,
+                    fontSize: isMobile ? Get.width * 0.05 :30.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -143,7 +144,7 @@ class Skills extends StatelessWidget {
                     skill['name']!,
                     style: TextStyle(
                       color: AppColors.textLightColor,
-                      fontSize: isMobile ? 18.sp : 25.sp,
+                      fontSize: isMobile ? Get.width * 0.035 : 25.sp,
                     ),
                   ),
                   SizedBox(height: 6.h),
