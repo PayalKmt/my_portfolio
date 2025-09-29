@@ -20,10 +20,10 @@ class HomeController extends GetxController {
 
 
   List<String> sliderImage = [
-
     'images/one.png',
     'images/two.png',
-
+    'images/four.jpeg',
+    'images/five.jpeg'
   ];
 
   // Map to easily access GlobalKeys by section name
