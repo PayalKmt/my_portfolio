@@ -1,8 +1,12 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'dart:html' as html;
+
+import 'package:url_launcher/url_launcher.dart';
 class HomeController extends GetxController {
+  var isDownloading = false.obs;
   //TODO: Implement HomeController
 
   // GlobalKeys for each section to enable scrolling
@@ -13,6 +17,14 @@ class HomeController extends GetxController {
   final GlobalKey projectsKey = GlobalKey();
   final GlobalKey educationKey = GlobalKey();
   final GlobalKey contactKey = GlobalKey();
+
+
+  List<String> sliderImage = [
+
+    'images/one.png',
+    'images/two.png',
+
+  ];
 
   // Map to easily access GlobalKeys by section name
   late Map<String, GlobalKey> selectionKeys;
@@ -137,6 +149,30 @@ class HomeController extends GetxController {
         backgroundColor: Get.theme.colorScheme.error,
         colorText: Get.theme.colorScheme.onError,
       );
+    }
+  }
+
+
+  Future<void> downloadPdf(String url, String fileName) async {
+    try {
+      if (kIsWeb) {
+        // For web, just open in new tab
+        final anchor =
+        html.AnchorElement(href: url)
+          ..download = fileName
+          ..target = '_blank';
+        html.document.body!.append(anchor);
+        anchor.click();
+        anchor.remove();
+      } else {
+        // For mobile, use url_launcher
+        if (await canLaunchUrl(Uri.parse(url))) {
+          await launchUrl(Uri.parse(url));
+        }
+      }
+      Get.snackbar("Success", "PDF opened");
+    } catch (e) {
+      Get.snackbar("Error", "Could not open PDF");
     }
   }
 }

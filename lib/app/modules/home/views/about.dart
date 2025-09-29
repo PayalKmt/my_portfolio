@@ -136,7 +136,7 @@ class About extends GetView<HomeController> {
                     ),
                     SizedBox(height: 20.h),
                     Text(
-                      "As a 3rd year student of Computer Science and Engineering, I am excited about the opportunity to develop my skills in App development and Web development. My experience with Dart, Flutter, Getx, Bloc, Html, CSS, JavaScript, React, Node.js, Express.js, Mongo DB, MySQL, Canvas, Android Studio, Visual Studio Code and Git version control has prepared me for creating functional and user-friendly mobile applications and web applications.",
+                      "As a 4th year student of Computer Science and Engineering, I am excited about the opportunity to develop my skills in App development and Web development. My experience with Dart, Flutter, Getx, Bloc, Html, CSS, JavaScript, React, Node.js, Express.js, Mongo DB, MySQL, Canvas, Android Studio, Visual Studio Code and Git version control has prepared me for creating functional and user-friendly mobile applications and web applications.",
                       style: TextStyle(
                         color: AppColors.textLightColor,
                         fontSize: isMobile ? Get.width * 0.035 : 25.sp,
@@ -155,13 +155,14 @@ class About extends GetView<HomeController> {
                     SizedBox(height: 40.h),
                     // Stats (e.g., 4+ projects, 2 years experience)
                     Wrap(
-                      spacing: 30.w,
+                      spacing: 15.w,
                       runSpacing: 20.h,
                       alignment:
                           isMobile ? WrapAlignment.center : WrapAlignment.start,
                       children: [
                         _buildStatCard(context, '4+', 'Projects'),
-                        _buildStatCard(context, '2', 'Internship'),
+                        _buildStatCard(context, '2+', 'Internships'),
+                        _buildStatCard(context, '3+', 'Certificates'),
                         // Add more stats as needed
                       ],
                     ),
@@ -178,7 +179,7 @@ class About extends GetView<HomeController> {
   Widget _buildStatCard(BuildContext context, String count, String label) {
     bool isMobile = 1.sw < 800; // Smaller breakpoint for cards
     return Container(
-      width: isMobile ? Get.width * 0.5 : 400.w,
+      width: isMobile ? Get.width * 0.5 : 300.w,
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: AppColors.cardColor,

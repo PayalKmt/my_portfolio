@@ -209,21 +209,33 @@ class Projects extends StatelessWidget {
       'title': 'FoodCo',
       'description':
       'A platform that allows households to monetize their culinary skills, promote healthy eating, and celebrate local culture through shared meals.',
-      'imageUrl': 'https://placehold.co/600x400/2C2C2C/E0E0E0?text=FoodCo',
+      'imageUrl': 'images/project.png',
       'link': 'https://github.com/payalkumawat/foodco',
+    },
+    {
+      "title": "AI Code Reviewer",
+      "description": "A web application that uses AI to analyze and review code snippets in real time. Provides instant feedback on syntax, performance, and coding best practices through an intuitive frontend and robust backend logic.",
+      "imageUrl": "images/project.png",
+      "link": "https://github.com/PayalKmt/AI-Code-Reviewer"
+    },
+    {
+      "title": "AI Image Generator",
+      "description": "A Flutter-based mobile app leveraging Imagine.art API to generate AI-driven images from text prompts. Built with Bloc state management, offering real-time preview and smooth user experience.",
+      "imageUrl": "images/project.png",
+      "link": "https://github.com/PayalKmt/AI-Image-Generator"
     },
     {
       'title': 'ToDo App',
       'description':
       'Created a simple to-do app using Flutter, with a backend powered by Node.js and MongoDB, enabling efficient CRUD operations for effective task management and user productivity.',
-      'imageUrl': 'https://placehold.co/600x400/2C2C2C/E0E0E0?text=ToDo+App',
+      'imageUrl': 'images/project.png',
       'link': 'https://github.com/payalkumawat/todo-app',
     },
     {
       'title': 'Attendance Management System',
       'description':
       'An app developed to streamline the attendance-taking process for teachers, saving time and improving efficiency in the classroom.',
-      'imageUrl': 'https://placehold.co/600x400/2C2C2C/E0E0E0?text=Attendance+System',
+      'imageUrl': 'images/project.png',
       'link': 'https://github.com/payalkumawat/attendance-management-system',
     },
     // Add more projects as needed

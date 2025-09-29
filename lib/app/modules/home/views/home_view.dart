@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -176,25 +177,30 @@ class HomeView extends GetView<HomeController> {
                                   ? WrapAlignment.center
                                   : WrapAlignment.start,
                           children: [
-                            ElevatedButton(
+                            OutlinedButton(
                               onPressed: () {
-                                controller.scrollToSection('Contact');
+                                controller.downloadPdf(
+                                  'https://drive.google.com/uc?export=download&id=1WvrjCGV5i-WdKQL46mYq4kLAywf-rxiB',
+                                  'My_Resume',
+                                );
                               },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: AppColors.buttonColor,
+                              style: OutlinedButton.styleFrom(
+                                side: BorderSide(
+                                  color: AppColors.primary2Color,
+                                  width: 2.w,
+                                ),
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: isMobile ? 25.h :38.h,
-                                  vertical: isMobile ? 10.w : 24.w,
+                                  horizontal: isMobile ? 25.w : 38.h,
+                                  vertical: isMobile ? 10.h : 24.w,
                                 ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10.r),
                                 ),
-                                elevation: 5,
                               ),
                               child: Text(
-                                'Get In Touch',
+                                'Download Resume',
                                 style: TextStyle(
-                                  color: AppColors.textColor,
+                                  color: AppColors.primary2Color,
                                   fontSize: isMobile ? 50.sp : 25.sp,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -321,22 +327,56 @@ class HomeView extends GetView<HomeController> {
                               ),
                               clipBehavior:
                                   Clip.hardEdge, // makes image respect border radius
-                              child: Image.asset(
-                                'images/devImage.webp',
-                                fit: BoxFit.cover,
-                                errorBuilder: (context, error, stackTrace) {
-                                  return Container(
-                                    color: AppColors.cardColor,
-                                    child: Center(
-                                      child: Text(
-                                        'Image Not Found',
-                                        style: TextStyle(
-                                          color: AppColors.textLightColor,
+                              child: CarouselSlider(
+                                options: CarouselOptions(
+                                  viewportFraction: 1,
+                                  enlargeCenterPage: false,
+                                  height: Get.height * 0.6,
+                                  autoPlay: true,
+                                ),
+
+                                items:
+                                controller.sliderImage.map((i) {
+                                  return Builder(
+                                    builder: (BuildContext context) {
+                                      return Container(
+                                        width:
+                                        MediaQuery.of(
+                                          context,
+                                        ).size.width,
+                                        margin: EdgeInsets.symmetric(
+                                          horizontal: 5.0,
                                         ),
-                                      ),
-                                    ),
+                                        decoration: BoxDecoration(
+                                          color: Colors.amber,
+                                        ),
+                                        child: Image.asset(
+                                          i,
+                                          fit: BoxFit.cover,
+                                          errorBuilder: (
+                                              context,
+                                              error,
+                                              stackTrace,
+                                              ) {
+                                            return Container(
+                                              color: AppColors.cardColor,
+                                              child: Center(
+                                                child: Text(
+                                                  'Image Not Found',
+                                                  style: TextStyle(
+                                                    color:
+                                                    AppColors
+                                                        .textLightColor,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                      );
+                                    },
                                   );
-                                },
+                                }).toList(),
                               ),
                             ),
                           ),

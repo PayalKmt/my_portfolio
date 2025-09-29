@@ -170,31 +170,67 @@ class Skills extends StatelessWidget {
 
   static const List<Map<String, dynamic>> _skillCategories = [
     {
+      'title': 'AI & Emerging',
+      'icon': FontAwesomeIcons.robot, // AI-related icon
+      'skills': [
+        {'name': 'Large Language Models (LLMs)', 'level': 90},
+        {'name': 'AI Integration in Applications', 'level': 85},
+
+        {'name': 'Generative AI APIs', 'level': 80},
+      ],
+    },
+    {
       'title': 'Languages',
       'icon': FontAwesomeIcons.code,
       'skills': [
         {'name': 'Dart', 'level': 90},
         {'name': 'C/C++', 'level': 75},
         {'name': 'Python', 'level': 80},
-        {'name': 'TypeScript', 'level': 85},
-        {'name': 'HTML/CSS', 'level': 95},
+        {'name': 'JS & TS', 'level': 90},
+
       ],
     },
     {
       'title': 'Frameworks',
-      'icon': FontAwesomeIcons.cube,
+      'icon':
+      FontAwesomeIcons.layerGroup, // architecture/framework related icon
       'skills': [
         {'name': 'Flutter', 'level': 90},
-        {'name': 'React', 'level': 80},
-        {'name': 'Node.js', 'level': 85},
+        {'name': 'State Management (GetX, BLoC)', 'level': 90},
+        {'name': 'React Native', 'level': 85},
       ],
     },
+    {
+      'title': 'Core Concepts',
+      'icon': FontAwesomeIcons.lightbulb, // skills/concepts related icon
+      'skills': [
+        {'name': 'DSA', 'level': 70},
+        {'name': 'OOPS', 'level': 85},
+        // {'name': 'Design Patterns & Clean Architecture', 'level': 80},
+        {'name': 'MVVM & MVM', 'level': 80},
+      ],
+    },
+
+    {
+      'title': 'Backend Dev',
+      'icon': FontAwesomeIcons.globe, // web/backend related icon
+      'skills': [
+        {'name': 'Node.js & Express.js', 'level': 90},
+        {'name': 'REST APIs', 'level': 90},
+        {'name': 'Prisma ORM', 'level': 80},
+        {'name': 'HTML & CSS', 'level': 95},
+
+
+      ],
+    },
+
     {
       'title': 'Databases',
       'icon': FontAwesomeIcons.database,
       'skills': [
         {'name': 'MySQL', 'level': 85},
         {'name': 'SQLite', 'level': 70},
+        {'name': 'MongoDB', 'level': 80},
         {'name': 'Firebase', 'level': 90},
       ],
     },
@@ -205,6 +241,9 @@ class Skills extends StatelessWidget {
         {'name': 'VS Code', 'level': 95},
         {'name': 'Android Studio', 'level': 85},
         {'name': 'Git & GitHub', 'level': 90},
+        {'name': 'Flutter Flow', 'level': 90},
+        {'name': 'Docker', 'level': 90},
+
       ],
     },
   ];
