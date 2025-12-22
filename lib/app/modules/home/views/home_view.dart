@@ -180,7 +180,7 @@ class HomeView extends GetView<HomeController> {
                             OutlinedButton(
                               onPressed: () {
                                 controller.downloadPdf(
-                                  'https://drive.google.com/uc?export=download&id=1D-5ZDQiNDf4Is3Nx8iBYTwP-Kon4FglN',
+                                  'https://drive.google.com/uc?export=download&id=1_EC5xMZyxxtZKsrMXs6B6IrAS4X5fN-f',
                                   'My_Resume',
                                 );
                               },
