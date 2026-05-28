@@ -170,67 +170,34 @@ class Skills extends StatelessWidget {
 
   static const List<Map<String, dynamic>> _skillCategories = [
     {
-      'title': 'AI & Emerging',
-      'icon': FontAwesomeIcons.robot, // AI-related icon
-      'skills': [
-        {'name': 'Large Language Models (LLMs)', 'level': 90},
-        {'name': 'AI Integration in Applications', 'level': 85},
-
-        {'name': 'Generative AI APIs', 'level': 80},
-      ],
-    },
-    {
       'title': 'Languages',
       'icon': FontAwesomeIcons.code,
       'skills': [
         {'name': 'Dart', 'level': 90},
-        {'name': 'C/C++', 'level': 75},
-        {'name': 'Python', 'level': 80},
-        {'name': 'JS & TS', 'level': 90},
-
+        {'name': 'C / C++', 'level': 75},
+        {'name': 'JavaScript', 'level': 90},
+        {'name': 'Java', 'level': 70},
+        {'name': 'HTML & CSS', 'level': 95},
       ],
     },
     {
       'title': 'Frameworks',
-      'icon':
-      FontAwesomeIcons.layerGroup, // architecture/framework related icon
+      'icon': FontAwesomeIcons.layerGroup,
       'skills': [
         {'name': 'Flutter', 'level': 90},
-        {'name': 'State Management (GetX, BLoC)', 'level': 90},
-        {'name': 'React Native', 'level': 85},
-      ],
-    },
-    {
-      'title': 'Core Concepts',
-      'icon': FontAwesomeIcons.lightbulb, // skills/concepts related icon
-      'skills': [
-        {'name': 'DSA', 'level': 70},
-        {'name': 'OOPS', 'level': 85},
-        // {'name': 'Design Patterns & Clean Architecture', 'level': 80},
-        {'name': 'MVVM & MVM', 'level': 80},
-      ],
-    },
-
-    {
-      'title': 'Backend Dev',
-      'icon': FontAwesomeIcons.globe, // web/backend related icon
-      'skills': [
+        {'name': 'GetX & Bloc', 'level': 90},
+        {'name': 'React.js', 'level': 85},
         {'name': 'Node.js & Express.js', 'level': 90},
-        {'name': 'REST APIs', 'level': 90},
-        {'name': 'Prisma ORM', 'level': 80},
-        {'name': 'HTML & CSS', 'level': 95},
-
-
+        {'name': 'Firebase Cloud Messaging', 'level': 85},
       ],
     },
-
     {
       'title': 'Databases',
       'icon': FontAwesomeIcons.database,
       'skills': [
         {'name': 'MySQL', 'level': 85},
-        {'name': 'SQLite', 'level': 70},
         {'name': 'MongoDB', 'level': 80},
+        {'name': 'SQLite', 'level': 70},
         {'name': 'Firebase', 'level': 90},
       ],
     },
@@ -238,12 +205,11 @@ class Skills extends StatelessWidget {
       'title': 'Developer Tools',
       'icon': FontAwesomeIcons.screwdriverWrench,
       'skills': [
-        {'name': 'VS Code', 'level': 95},
-        {'name': 'Android Studio', 'level': 85},
         {'name': 'Git & GitHub', 'level': 90},
-        {'name': 'Flutter Flow', 'level': 90},
-        {'name': 'Docker', 'level': 90},
-
+        {'name': 'Android Studio', 'level': 85},
+        {'name': 'VS Code', 'level': 95},
+        {'name': 'Postman', 'level': 85},
+        {'name': 'GitHub Actions (CI/CD)', 'level': 80},
       ],
     },
   ];

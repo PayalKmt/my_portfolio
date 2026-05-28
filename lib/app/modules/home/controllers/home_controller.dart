@@ -49,6 +49,7 @@ class HomeController extends GetxController {
     }
   }
 
+  var isSending = false.obs;
   var hoveredSection = ''.obs;
   var activeSection = 'Home'.obs;
 
@@ -95,13 +96,22 @@ class HomeController extends GetxController {
   Future<void> sendMessage() async {
     if (!validateFields()) return;
 
+    isSending.value = true;
     await Future.delayed(const Duration(seconds: 2)); // simulate API call
+    isSending.value = false;
 
-    // Clear fields
     nameController.clear();
     emailController.clear();
     subjectController.clear();
     messageController.clear();
+
+    Get.snackbar(
+      'Message Sent',
+      'Thank you for your message!',
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: Colors.green,
+      colorText: Colors.white,
+    );
   }
 
 

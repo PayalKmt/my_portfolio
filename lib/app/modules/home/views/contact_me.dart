@@ -129,33 +129,36 @@ class ContactMe extends GetView<HomeController> {
                       SizedBox(height: 30.h),
                       _buildTextField('Your Message',controller.messageController, isMobile, maxLines: 5),
                       SizedBox(height: 40.h),
-                      ElevatedButton(
-                        onPressed: () {
-                          // Implement form submission logic here
-                          controller.sendMessage();
-                          Get.snackbar(
-                            'Message Sent',
-                            'Thank you for your message!',
-                            snackPosition: SnackPosition.BOTTOM,
-                            backgroundColor: AppColors.secondaryColor,
-                            colorText: AppColors.backgroundColor,
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.buttonColor,
-                          padding: EdgeInsets.symmetric(horizontal: isMobile ? 30.w : 40.w, vertical: 15.h),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.r),
+                      Obx(
+                        () => ElevatedButton(
+                          onPressed: controller.isSending.value
+                              ? null
+                              : () => controller.sendMessage(),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.buttonColor,
+                            padding: EdgeInsets.symmetric(horizontal: isMobile ? 30.w : 40.w, vertical: 15.h),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.r),
+                            ),
+                            elevation: 5,
                           ),
-                          elevation: 5,
-                        ),
-                        child: Text(
-                          'Send Message',
-                          style: TextStyle(
-                            color: AppColors.textColor,
-                            fontSize: isMobile ? Get.width * 0.035 : 28.sp,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          child: controller.isSending.value
+                              ? SizedBox(
+                                  width: isMobile ? Get.width * 0.04 : 24.sp,
+                                  height: isMobile ? Get.width * 0.04 : 24.sp,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2.5,
+                                    color: AppColors.textColor,
+                                  ),
+                                )
+                              : Text(
+                                  'Send Message',
+                                  style: TextStyle(
+                                    color: AppColors.textColor,
+                                    fontSize: isMobile ? Get.width * 0.035 : 28.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                         ),
                       ),
                     ],

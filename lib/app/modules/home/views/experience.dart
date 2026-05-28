@@ -23,7 +23,7 @@ class Experience extends StatelessWidget {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: 'Internship ',
+                  text: 'Work ',
                   style: TextStyle(
                     color: AppColors.textColor,
                     fontSize: isMobile ? Get.width * 0.06 : 48.sp,
@@ -236,6 +236,20 @@ class Experience extends StatelessWidget {
 
   static const List<Map<String, dynamic>> _experiences = [
     {
+      'duration': 'April 2026 - Present',
+      'title': 'Full Stack Developer',
+      'company': 'Future Desk',
+      'description':
+      'Developing and maintaining scalable full-stack applications using modern front-end and back-end technologies. Working on real-time projects with focus on performance, scalability, and clean architecture. Handling API integration, debugging, testing, and deployment workflows.',
+    },
+    {
+      'duration': '5th Jan - 20th April 2026',
+      'title': 'Software Developer',
+      'company': 'Techno Particles',
+      'description':
+      'Gained hands-on experience in front-end and back-end development technologies. Contributed to real-time projects involving application development. Involved in debugging, testing, API integration, and deployment processes.',
+    },
+    {
       'duration': '20th Jan - 20th April 2025',
       'title': 'Node.js Intern',
       'company': 'UptoSkills',
@@ -249,7 +263,6 @@ class Experience extends StatelessWidget {
       'description':
       'Developed and maintained Flutter applications, focusing on UI/UX improvements and performance optimization. Worked closely with senior developers to implement new features and debug existing codebases. Gained hands-on experience in mobile app development lifecycle.',
     },
-    // Add more experiences as needed
   ];
 
 }

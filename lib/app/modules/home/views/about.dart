@@ -161,7 +161,7 @@ class About extends GetView<HomeController> {
                           isMobile ? WrapAlignment.center : WrapAlignment.start,
                       children: [
                         _buildStatCard(context, '4+', 'Projects'),
-                        _buildStatCard(context, '2+', 'Internships'),
+                        _buildStatCard(context, '4+', 'Experiences'),
                         _buildStatCard(context, '3+', 'Certificates'),
                         // Add more stats as needed
                       ],
