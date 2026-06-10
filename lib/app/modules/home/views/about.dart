@@ -126,7 +126,7 @@ class About extends GetView<HomeController> {
                           : CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "I'm Payal Kumawat, a Flutter Developer",
+                      "I'm Payal Kumawat",
                       style: TextStyle(
                         color: AppColors.primaryColor,
                         fontSize: isMobile ? Get.width * 0.04 : 44.sp,
@@ -136,7 +136,7 @@ class About extends GetView<HomeController> {
                     ),
                     SizedBox(height: 20.h),
                     Text(
-                      "As a 4th year student of Computer Science and Engineering, I am excited about the opportunity to develop my skills in App development and Web development. My experience with Dart, Flutter, Getx, Bloc, Html, CSS, JavaScript, React, Node.js, Express.js, Mongo DB, MySQL, Canvas, Android Studio, Visual Studio Code and Git version control has prepared me for creating functional and user-friendly mobile applications and web applications.",
+                      "Flutter Developer & Full Stack Engineer — B.Tech CSE graduate with 9.00 CGPA from Central University of Haryana. I build production-ready, cross-platform applications using Flutter, Dart, Firebase, Node.js, and React. My work spans IoT-integrated franchise platforms, AI-powered enterprise communication tools, real-time WebRTC calling, and offline-capable mobile apps.",
                       style: TextStyle(
                         color: AppColors.textLightColor,
                         fontSize: isMobile ? Get.width * 0.035 : 25.sp,
@@ -145,7 +145,7 @@ class About extends GetView<HomeController> {
                     ),
                     SizedBox(height: 20.h),
                     Text(
-                      "I'm passionate about building elegant solutions that solve real-world problems. My goal is to continue growing as a developer by taking on challenging projects and expanding my technical expertise.",
+                      "I bring both mobile and backend depth to every project — writing clean architectures, integrating real-time features, and delivering systems that scale in production. Currently exploring Java and always on the lookout for new technologies to add to my toolkit. Driven by real-world impact, I continuously push the boundaries of what I can build.",
                       style: TextStyle(
                         color: AppColors.textLightColor,
                         fontSize: isMobile ? Get.width * 0.035 : 25.sp,
@@ -162,8 +162,40 @@ class About extends GetView<HomeController> {
                       children: [
                         _buildStatCard(context, '4+', 'Projects'),
                         _buildStatCard(context, '4+', 'Experiences'),
-                        _buildStatCard(context, '3+', 'Certificates'),
-                        // Add more stats as needed
+                        _buildStatCard(context, '2+', 'Certificates'),
+                      ],
+                    ),
+                    SizedBox(height: 35.h),
+                    Text(
+                      'Key Technologies',
+                      style: TextStyle(
+                        color: AppColors.textColor,
+                        fontSize: isMobile ? Get.width * 0.04 : 28.sp,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 0.5,
+                      ),
+                      textAlign: isMobile ? TextAlign.center : TextAlign.left,
+                    ),
+                    SizedBox(height: 15.h),
+                    Wrap(
+                      spacing: 8.w,
+                      runSpacing: 8.h,
+                      alignment: isMobile ? WrapAlignment.center : WrapAlignment.start,
+                      children: [
+                        _buildSkillChip('Flutter', const Color(0xFF42A5F5)),
+                        _buildSkillChip('Dart', const Color(0xFF29B6F6)),
+                        _buildSkillChip('Node.js', const Color(0xFF66BB6A)),
+                        _buildSkillChip('React.js', const Color(0xFF26C6DA)),
+                        _buildSkillChip('Firebase', const Color(0xFFFFCA28)),
+                        _buildSkillChip('GetX / Bloc', const Color(0xFFAB47BC)),
+                        _buildSkillChip('WebRTC', const Color(0xFFFF7043)),
+                        _buildSkillChip('Socket.IO', const Color(0xFF00BCD4)),
+                        _buildSkillChip('MongoDB', const Color(0xFF4CAF50)),
+                        _buildSkillChip('MySQL', const Color(0xFF03A9F4)),
+                        _buildSkillChip('Clean Architecture', const Color(0xFF7E57C2)),
+                        _buildSkillChip('REST APIs', const Color(0xFF26A69A)),
+                        _buildSkillChip('FCM', const Color(0xFFEF5350)),
+                        _buildSkillChip('Git & GitHub', const Color(0xFFBDBDBD)),
                       ],
                     ),
                   ],
@@ -172,6 +204,32 @@ class About extends GetView<HomeController> {
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildSkillChip(String label, Color color) {
+    bool isMobile = 1.sw < 800;
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: isMobile ? 12.w : 16.w,
+        vertical: isMobile ? 5.h : 7.h,
+      ),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [color.withValues(alpha: 0.15), color.withValues(alpha: 0.07)],
+        ),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: color.withValues(alpha: 0.5), width: 1.w),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          color: color,
+          fontSize: isMobile ? Get.width * 0.028 : 20.sp,
+          fontWeight: FontWeight.w500,
+          letterSpacing: 0.3,
+        ),
       ),
     );
   }

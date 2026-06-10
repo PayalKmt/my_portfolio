@@ -38,8 +38,7 @@ class Projects extends StatelessWidget {
                   style: TextStyle(
                     fontSize: isMobile ? Get.width * 0.06 : 48.sp,
                     fontWeight: FontWeight.bold,
-                    foreground:
-                    Paint()
+                    foreground: Paint()
                       ..shader = LinearGradient(
                         colors: [
                           AppColors.secondaryColor,
@@ -57,9 +56,8 @@ class Projects extends StatelessWidget {
             color: AppColors.secondaryColor,
             margin: EdgeInsets.only(top: 10.h, bottom: 40.h),
           ),
-          // Project categories (AI, Flutter, Web, Android) - as buttons
           Wrap(
-            spacing: isMobile ? 30.w :15.w,
+            spacing: isMobile ? 30.w : 15.w,
             runSpacing: 15.h,
             alignment: WrapAlignment.center,
             children: [
@@ -71,20 +69,29 @@ class Projects extends StatelessWidget {
             ],
           ),
           SizedBox(height: isMobile ? 50.h : 70.h),
-          // Projects Grid
           GridView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: isMobile ? 1 : isTablet ? 2 : 3, // 1 column on mobile, 3 on desktop
+              crossAxisCount: isMobile
+                  ? 1
+                  : isTablet
+                  ? 2
+                  : 3,
               crossAxisSpacing: isMobile ? 20.w : 30.w,
               mainAxisSpacing: isMobile ? 20.h : 30.h,
-              childAspectRatio: isMobile ? 0.74 : isTablet ? 0.6 : 0.5, // Adjust aspect ratio for cards
+              childAspectRatio: isMobile
+                  ? 0.68
+                  : isTablet
+                  ? 0.52
+                  : 0.65,
             ),
             itemCount: _projects.length,
             itemBuilder: (context, index) {
-              final project = _projects[index];
-              return _buildProjectCard(context, project, isMobile);
+              return _ProjectCard(
+                project: _projects[index],
+                isMobile: isMobile,
+              );
             },
           ),
         ],
@@ -93,15 +100,14 @@ class Projects extends StatelessWidget {
   }
 
   Widget _buildCategoryButton(String category, bool isMobile) {
-    // This can be enhanced with state management to filter projects
     return ElevatedButton(
-      onPressed: () {
-        // Implement filtering logic here
-        print('Filter by: $category');
-      },
+      onPressed: () {},
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.cardColor,
-        padding: EdgeInsets.symmetric(horizontal: isMobile ? 20.w : 25.w, vertical: isMobile ? 10.h : 12.h),
+        padding: EdgeInsets.symmetric(
+          horizontal: isMobile ? 20.w : 25.w,
+          vertical: isMobile ? 10.h : 12.h,
+        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.r),
           side: BorderSide(color: AppColors.primaryColor, width: 1.w),
@@ -119,126 +125,311 @@ class Projects extends StatelessWidget {
     );
   }
 
-  Widget _buildProjectCard(BuildContext context, Map<String, dynamic> project, bool isMobile) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 50.w),
-      decoration: BoxDecoration(
-        color: AppColors.cardColor,
-        borderRadius: BorderRadius.circular(15.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 3),
-            blurRadius: 10.r,
-            offset: const Offset(0, 5),
+  static const List<Map<String, dynamic>> _projects = [
+    {
+      'title': 'E-Panipuri Cart',
+      'description':
+          'Multi-platform IoT-integrated franchise management system (Mobile App + Web Admin + Super Admin Panel). Features real-time order processing, dispenser & device management, QR-based machine identification, and Firebase auth with secure token-based session management.',
+      'imageUrl': 'images/project.png',
+      // 'link': 'https://super-panel.epanipuricart.com',
+      // 'linkLabel': 'View Live',
+      'link': null,
+      'linkLabel': null,
+      'playStoreLink':
+          'https://play.google.com/store/apps/details?id=com.epanipuricart.partner',
+      'techStack': ['Flutter', 'Firebase', 'IoT', 'REST APIs', 'Web Admin'],
+    },
+    {
+      'title': 'Discount Lala',
+      'description':
+          'Hyperlocal discount & coupon marketplace for Tier-2/3 cities (client project at FutureDesks). My contribution: Flutter mobile app, Node.js backend APIs, and full API integration. Features phone OTP auth, digital coupon generation, booklet purchases, add-on offers, referral & distributor commission system, GPS-based city detection, cart management, and coupon redemption. Admin panel built by a fellow team member.',
+      'imageUrl': 'images/project.png',
+      'link': null,
+      'linkLabel': null,
+      'techStack': [
+        'Flutter',
+        'Node.js',
+        'PostgreSQL',
+        'Prisma ORM',
+        'Firebase Auth',
+        'BLoC',
+        'JWT',
+      ],
+    },
+    {
+      'title': 'BetaBuddy',
+      'description':
+          'Enterprise Flutter application using Clean Architecture for employee communication, tasks, alerts, and approvals. Real-time voice calling via WebRTC & Socket.IO, FCM push notifications, secure role-based auth, and an AI-powered "Ask AI" assistant with chat & voice recognition.',
+      'imageUrl': 'images/project.png',
+      'link': null,
+      'linkLabel': null,
+      'techStack': [
+        'Flutter',
+        'WebRTC',
+        'Socket.IO',
+        'FCM',
+        'Clean Architecture',
+        'AI',
+      ],
+    },
+    {
+      'title': 'FoodCo',
+      'description':
+          'Community meal-sharing platform where households monetize their culinary skills. Built with Flutter, GetX state management, and SQFlite for offline support — enabling fast local data access without connectivity.',
+      'imageUrl': 'images/project.png',
+      'link': 'https://github.com/payalkumawat/foodco',
+      'linkLabel': 'GitHub',
+      'techStack': ['Flutter', 'Dart', 'GetX', 'SQFlite'],
+    },
+    {
+      'title': 'AI Code Reviewer',
+      'description':
+          'Web app that uses AI to analyze and review code snippets in real time. Provides instant feedback on syntax, performance, and coding best practices through an intuitive frontend and robust backend logic.',
+      'imageUrl': 'images/project.png',
+      'link': 'https://github.com/PayalKmt/AI-Code-Reviewer',
+      'linkLabel': 'GitHub',
+      'techStack': ['React.js', 'Node.js', 'AI / LLM', 'REST APIs'],
+    },
+    {
+      'title': 'AI Image Generator',
+      'description':
+          'Flutter mobile app leveraging the Imagine.art API to generate AI-driven images from text prompts. Built with Bloc state management, offering real-time preview and a polished user experience.',
+      'imageUrl': 'images/project.png',
+      'link': 'https://github.com/PayalKmt/AI-Image-Generator',
+      'linkLabel': 'GitHub',
+      'techStack': ['Flutter', 'Bloc', 'AI API', 'Dart'],
+    },
+  ];
+}
+
+class _ProjectCard extends StatefulWidget {
+  final Map<String, dynamic> project;
+  final bool isMobile;
+
+  const _ProjectCard({required this.project, required this.isMobile});
+
+  @override
+  State<_ProjectCard> createState() => _ProjectCardState();
+}
+
+class _ProjectCardState extends State<_ProjectCard> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final project = widget.project;
+    final isMobile = widget.isMobile;
+    final techStack = (project['techStack'] as List?)?.cast<String>() ?? [];
+    final linkLabel = project['linkLabel'] as String?;
+    final link = project['link'] as String?;
+    final playStoreLink = project['playStoreLink'] as String?;
+
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        decoration: BoxDecoration(
+          color: AppColors.cardColor,
+          borderRadius: BorderRadius.circular(15.r),
+          border: Border.all(
+            color: _isHovered
+                ? AppColors.primaryColor.withValues(alpha: 0.7)
+                : AppColors.primaryColor.withValues(alpha: 0.15),
+            width: _isHovered ? 1.5 : 1,
           ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(15.r)),
-            child: Image.network(
-              project['imageUrl']!,
-              fit: BoxFit.cover,
-              height: isMobile ? 400.h : 600.h, // Fixed height for image
-              width: double.infinity,
-              errorBuilder: (context, error, stackTrace) {
-                return Container(
-                  height: isMobile ? 400.h : 600.h,
-                  color: AppColors.textLightColor.withValues(alpha: 2),
-                  child: Center(
-                    child: Text(
-                      'Image Failed to Load',
-                      style: TextStyle(color: AppColors.textLightColor, fontSize: 14.sp),
+          boxShadow: [
+            BoxShadow(
+              color: _isHovered
+                  ? AppColors.primaryColor.withValues(alpha: 0.18)
+                  : Colors.black.withValues(alpha: 0.08),
+              blurRadius: _isHovered ? 28.r : 10.r,
+              offset: const Offset(0, 6),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Gradient accent bar
+            Container(
+              height: isMobile ? 3.h : 4.h,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [AppColors.primaryColor, AppColors.secondaryColor],
+                ),
+                borderRadius: BorderRadius.vertical(top: Radius.circular(15.r)),
+              ),
+            ),
+            // Image placeholder
+            ClipRRect(
+              child: Image.network(
+                project['imageUrl']!,
+                fit: BoxFit.cover,
+                height: isMobile ? 320.h : 460.h,
+                width: double.infinity,
+                errorBuilder: (context, error, stackTrace) {
+                  return Container(
+                    height: isMobile ? 320.h : 460.h,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          AppColors.primaryColor.withValues(alpha: 0.2),
+                          AppColors.secondaryColor.withValues(alpha: 0.08),
+                        ],
+                      ),
+                    ),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.code_rounded,
+                            size: isMobile ? 60.sp : 70.sp,
+                            color: AppColors.primaryColor.withValues(
+                              alpha: 0.45,
+                            ),
+                          ),
+                          SizedBox(height: 10.h),
+                          Text(
+                            project['title']!,
+                            style: TextStyle(
+                              color: AppColors.textLightColor,
+                              fontSize: isMobile ? Get.width * 0.038 : 26.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(18.r),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    project['title']!,
+                    style: TextStyle(
+                      color: AppColors.secondaryColor,
+                      fontSize: isMobile ? Get.width * 0.052 : 34.sp,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                );
-              },
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.h,vertical: 20.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  project['title']!,
-                  style: TextStyle(
-                    color: AppColors.secondaryColor,
-                    fontSize: isMobile ? Get.width * 0.06 : 40.sp,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 15.h),
-                Text(
-                  project['description']!,
-                  style: TextStyle(
-                    color: AppColors.textLightColor,
-                    fontSize: isMobile ? Get.width * 0.035 : 25.sp,
-                  ),
-                  maxLines: 4,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(height: isMobile ? 10.h : 20.h),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: TextButton(
-                    onPressed: () {
-                      // Open project link
-                      if (project['link'] != null) {
-                        Get.find<HomeController>().openUrl(project['link']!);
-                      }
-                    },
-                    child: Text(
-                      'Github Link',
-                      style: TextStyle(color: AppColors.primaryColor, fontSize: isMobile ? Get.width * 0.035 : 22.sp),
+                  SizedBox(height: 10.h),
+                  if (techStack.isNotEmpty) ...[
+                    Wrap(
+                      spacing: 6.w,
+                      runSpacing: 6.h,
+                      children: techStack
+                          .map((tech) => _buildTechChip(tech, isMobile))
+                          .toList(),
                     ),
+                    SizedBox(height: 12.h),
+                  ],
+                  Text(
+                    project['description']!,
+                    style: TextStyle(
+                      color: AppColors.textLightColor,
+                      fontSize: isMobile ? Get.width * 0.031 : 22.sp,
+                      height: 1.55,
+                    ),
+                    maxLines: 4,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-              ],
+                  if (link != null && linkLabel != null ||
+                      playStoreLink != null) ...[
+                    SizedBox(height: 12.h),
+                    Wrap(
+                      spacing: 16.w,
+                      runSpacing: 8.h,
+                      children: [
+                        if (link != null && linkLabel != null)
+                          TextButton.icon(
+                            onPressed: () =>
+                                Get.find<HomeController>().openUrl(link),
+                            icon: Icon(
+                              linkLabel == 'View Live'
+                                  ? Icons.open_in_new_rounded
+                                  : Icons.code_rounded,
+                              size: isMobile ? Get.width * 0.038 : 22.sp,
+                              color: AppColors.primaryColor,
+                            ),
+                            label: Text(
+                              linkLabel,
+                              style: TextStyle(
+                                color: AppColors.primaryColor,
+                                fontSize: isMobile ? Get.width * 0.031 : 22.sp,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            style: TextButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            ),
+                          ),
+                        if (playStoreLink != null)
+                          TextButton.icon(
+                            onPressed: () => Get.find<HomeController>().openUrl(
+                              playStoreLink,
+                            ),
+                            icon: Icon(
+                              Icons.android_rounded,
+                              size: isMobile ? Get.width * 0.038 : 22.sp,
+                              color: const Color(0xFF3DDC84),
+                            ),
+                            label: Text(
+                              'Play Store',
+                              style: TextStyle(
+                                color: const Color(0xFF3DDC84),
+                                fontSize: isMobile ? Get.width * 0.031 : 22.sp,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            style: TextButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
-  static const List<Map<String, dynamic>> _projects = [
-    {
-      'title': 'FoodCo',
-      'description':
-      'A platform that allows households to monetize their culinary skills, promote healthy eating, and celebrate local culture through shared meals.',
-      'imageUrl': 'images/project.png',
-      'link': 'https://github.com/payalkumawat/foodco',
-    },
-    {
-      "title": "AI Code Reviewer",
-      "description": "A web application that uses AI to analyze and review code snippets in real time. Provides instant feedback on syntax, performance, and coding best practices through an intuitive frontend and robust backend logic.",
-      "imageUrl": "images/project.png",
-      "link": "https://github.com/PayalKmt/AI-Code-Reviewer"
-    },
-    {
-      "title": "AI Image Generator",
-      "description": "A Flutter-based mobile app leveraging Imagine.art API to generate AI-driven images from text prompts. Built with Bloc state management, offering real-time preview and smooth user experience.",
-      "imageUrl": "images/project.png",
-      "link": "https://github.com/PayalKmt/AI-Image-Generator"
-    },
-    {
-      'title': 'ToDo App',
-      'description':
-      'Created a simple to-do app using Flutter, with a backend powered by Node.js and MongoDB, enabling efficient CRUD operations for effective task management and user productivity.',
-      'imageUrl': 'images/project.png',
-      'link': 'https://github.com/payalkumawat/todo-app',
-    },
-    {
-      'title': 'Attendance Management System',
-      'description':
-      'An app developed to streamline the attendance-taking process for teachers, saving time and improving efficiency in the classroom.',
-      'imageUrl': 'images/project.png',
-      'link': 'https://github.com/payalkumawat/attendance-management-system',
-    },
-    // Add more projects as needed
-  ];
-
+  Widget _buildTechChip(String label, bool isMobile) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: isMobile ? 8.w : 10.w,
+        vertical: isMobile ? 3.h : 4.h,
+      ),
+      decoration: BoxDecoration(
+        color: AppColors.primaryColor.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(6.r),
+        border: Border.all(
+          color: AppColors.primaryColor.withValues(alpha: 0.3),
+          width: 0.8,
+        ),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          color: AppColors.primaryColor,
+          fontSize: isMobile ? Get.width * 0.024 : 18.sp,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    );
+  }
 }

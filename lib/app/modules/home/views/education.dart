@@ -157,7 +157,7 @@ class Education extends StatelessWidget {
       'institution': 'Central University of Haryana',
       'description':
       'Pursuing my degree with a focus on software development and advanced programming concepts.',
-      'grade': 'CGPA: 8.54',
+      'grade': 'CGPA: 9.00',
     },
     {
       'year': '2020 - 2021',

@@ -159,7 +159,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                         SizedBox(height: 40.w),
                         Text(
-                          "A passionate Computer Science Engineering student with expertise in App development using Flutter, React, and Node.js.",
+                          "Flutter Developer & Full Stack Engineer — building production-ready cross-platform apps, real-time systems, and scalable backends.",
                           style: TextStyle(
                             color: AppColors.textLightColor,
                             fontSize: isMobile ? Get.width * 0.035 : 25.sp,
@@ -180,7 +180,7 @@ class HomeView extends GetView<HomeController> {
                             OutlinedButton(
                               onPressed: () {
                                 controller.downloadPdf(
-                                  'https://drive.google.com/uc?export=download&id=1_EC5xMZyxxtZKsrMXs6B6IrAS4X5fN-f',
+                                  'https://drive.google.com/uc?export=download&id=1fg06Aq7XccKq67GGTo1KldTUlNit4DRV',
                                   'My_Resume',
                                 );
                               },
