@@ -1,9 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter/foundation.dart' show kIsWeb;
-import 'dart:html' as html;
-
 import 'package:url_launcher/url_launcher.dart';
 class HomeController extends GetxController {
   var isDownloading = false.obs;
@@ -165,20 +162,8 @@ class HomeController extends GetxController {
 
   Future<void> downloadPdf(String url, String fileName) async {
     try {
-      if (kIsWeb) {
-        // For web, just open in new tab
-        final anchor =
-        html.AnchorElement(href: url)
-          ..download = fileName
-          ..target = '_blank';
-        html.document.body!.append(anchor);
-        anchor.click();
-        anchor.remove();
-      } else {
-        // For mobile, use url_launcher
-        if (await canLaunchUrl(Uri.parse(url))) {
-          await launchUrl(Uri.parse(url));
-        }
+      if (await canLaunchUrl(Uri.parse(url))) {
+        await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
       }
       Get.snackbar("Success", "PDF opened");
     } catch (e) {

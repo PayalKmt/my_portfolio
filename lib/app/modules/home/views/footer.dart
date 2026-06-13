@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../utils/app_colors.dart';
 
 class Footer extends GetView<HomeController> {
@@ -71,22 +70,22 @@ class Footer extends GetView<HomeController> {
                       children: [
                         IconButton(
                           onPressed: () => controller.openUrl('https://www.linkedin.com/in/payal-kumawat-664973302/'),
-                          icon: FaIcon(FontAwesomeIcons.linkedinIn, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 : 30.sp),
+                          icon: Icon(Icons.social_distance, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 : 30.sp),
                         ),
                         SizedBox(width: 20.w),
                         IconButton(
                           onPressed: () => controller.openUrl('https://github.com/PayalKmt'),
-                          icon: FaIcon(FontAwesomeIcons.github, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 :30.sp),
+                          icon: Icon(Icons.code, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 :30.sp),
                         ),
                         SizedBox(width: 20.w),
                         IconButton(
                           onPressed: () => controller.openUrl('mailto:kumawatpayal2005513@gmail.com'),
-                          icon: FaIcon(FontAwesomeIcons.envelope, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 :30.sp),
+                          icon: Icon(Icons.email, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 :30.sp),
                         ),
                         SizedBox(width: 20.w),
                         IconButton(
                           onPressed: () => controller.openUrl('https://leetcode.com/u/kumawatpayal2005513/'),
-                          icon: FaIcon(FontAwesomeIcons.code, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 :30.sp),
+                          icon: Icon(Icons.code, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 :30.sp),
                         ),
                       ],
                     ),

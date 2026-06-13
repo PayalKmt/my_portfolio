@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../utils/app_colors.dart';
 
 class ContactMe extends GetView<HomeController> {
@@ -70,14 +69,14 @@ class ContactMe extends GetView<HomeController> {
                     crossAxisAlignment: isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
                     children: [
                       _buildContactInfo(
-                        FontAwesomeIcons.locationDot,
+                        Icons.location_on,
                         'Location',
                         'Sikar, Rajasthan, India',
                         isMobile
                       ),
                       SizedBox(height: 30.h),
                       _buildContactInfo(
-                        FontAwesomeIcons.envelope,
+                        Icons.email,
                         'Email',
                         'kumawatpayal2005513@gmail.com',
                         isMobile,
@@ -85,7 +84,7 @@ class ContactMe extends GetView<HomeController> {
                       ),
                       SizedBox(height: 30.h),
                       _buildContactInfo(
-                        FontAwesomeIcons.phone,
+                        Icons.phone,
                         'Phone',
                         '+91 8058776684',
                         isMobile,
@@ -93,7 +92,7 @@ class ContactMe extends GetView<HomeController> {
                       ),
                       SizedBox(height: 30.h),
                       _buildContactInfo(
-                        FontAwesomeIcons.linkedin,
+                        Icons.linked_camera,
                         'LinkedIn',
                         'Payal Kumawat',
                         isMobile,
@@ -181,7 +180,7 @@ class ContactMe extends GetView<HomeController> {
         child: Row(
           mainAxisSize: isMobile ? MainAxisSize.max : MainAxisSize.min, // To wrap content
           children: [
-            FaIcon(icon, color: AppColors.primaryColor, size: isMobile ? Get.width * 0.035 : 30.sp),
+            Icon(icon, color: AppColors.primaryColor, size: isMobile ? Get.width * 0.035 : 30.sp),
             SizedBox(width: isMobile ? 40.w : 30.w),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

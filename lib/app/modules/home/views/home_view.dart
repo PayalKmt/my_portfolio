@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:get/get.dart';
 import 'package:portfolio/app/modules/home/views/contact_me.dart';
@@ -247,8 +246,8 @@ class HomeView extends GetView<HomeController> {
                                   () => controller.openUrl(
                                     'https://www.linkedin.com/in/payal-kumawat-664973302/',
                                   ),
-                              icon: FaIcon(
-                                FontAwesomeIcons.linkedinIn,
+                              icon: Icon(
+                                Icons.link,
                                 color: AppColors.socialIconColor,
                                 size: isMobile ? Get.width * 0.06 : 40.sp,
                               ),
@@ -259,8 +258,8 @@ class HomeView extends GetView<HomeController> {
                                   () => controller.openUrl(
                                     'https://github.com/PayalKmt',
                                   ),
-                              icon: FaIcon(
-                                FontAwesomeIcons.github,
+                              icon: Icon(
+                                Icons.developer_mode,
                                 color: AppColors.socialIconColor,
                                 size: isMobile ? Get.width * 0.06 : 40.sp,
                               ),
@@ -271,8 +270,8 @@ class HomeView extends GetView<HomeController> {
                                   () => controller.openUrl(
                                     'mailto:kumawatpayal2005513@gmail.com',
                                   ),
-                              icon: FaIcon(
-                                FontAwesomeIcons.envelope,
+                              icon: Icon(
+                                Icons.email_outlined,
                                 color: AppColors.socialIconColor,
                                 size: isMobile ? Get.width * 0.06 : 40.sp,
                               ),
@@ -282,9 +281,9 @@ class HomeView extends GetView<HomeController> {
                               onPressed:
                                   () => controller.openUrl(
                                     'https://leetcode.com/u/kumawatpayal2005513/',
-                                  ), // Replace with actual blog/website
-                              icon: FaIcon(
-                                FontAwesomeIcons.code,
+                                  ),
+                              icon: Icon(
+                                Icons.terminal,
                                 color: AppColors.socialIconColor,
                                 size: isMobile ? Get.width * 0.06 : 40.sp,
                               ),

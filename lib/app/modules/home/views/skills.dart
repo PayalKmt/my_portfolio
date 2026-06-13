@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/utils/app_colors.dart';
 import 'package:get/get.dart';
 
@@ -122,7 +121,7 @@ class Skills extends StatelessWidget {
           children: [
             Row(
               children: [
-                FaIcon(icon, color: Colors.blueAccent, size: isMobile ? Get.width * 0.06 : 40.sp),
+                Icon(icon, color: Colors.blueAccent, size: isMobile ? Get.width * 0.06 : 40.sp),
                 SizedBox(width: 15.w),
                 Text(
                   title,
@@ -168,10 +167,10 @@ class Skills extends StatelessWidget {
     );
   }
 
-  static const List<Map<String, dynamic>> _skillCategories = [
+  static final List<Map<String, dynamic>> _skillCategories = [
     {
       'title': 'Languages',
-      'icon': FontAwesomeIcons.code,
+      'icon': Icons.code,
       'skills': [
         {'name': 'Dart', 'level': 90},
         {'name': 'C / C++', 'level': 75},
@@ -182,7 +181,7 @@ class Skills extends StatelessWidget {
     },
     {
       'title': 'Frameworks',
-      'icon': FontAwesomeIcons.layerGroup,
+      'icon': Icons.layers,
       'skills': [
         {'name': 'Flutter', 'level': 90},
         {'name': 'GetX & Bloc', 'level': 90},
@@ -193,7 +192,7 @@ class Skills extends StatelessWidget {
     },
     {
       'title': 'Databases',
-      'icon': FontAwesomeIcons.database,
+      'icon': Icons.storage,
       'skills': [
         {'name': 'MySQL', 'level': 85},
         {'name': 'MongoDB', 'level': 80},
@@ -203,7 +202,7 @@ class Skills extends StatelessWidget {
     },
     {
       'title': 'Developer Tools',
-      'icon': FontAwesomeIcons.screwdriverWrench,
+      'icon': Icons.build,
       'skills': [
         {'name': 'Git & GitHub', 'level': 90},
         {'name': 'Android Studio', 'level': 85},
