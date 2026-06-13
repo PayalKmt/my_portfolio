@@ -1,5 +1,5 @@
 {
-  "buildCommand": "git clone https://github.com/flutter/flutter.git --depth 1 -b stable && export PATH=$PATH:$(pwd)/flutter/bin && flutter config --enable-web && flutter --version && flutter pub get && flutter build web --release --no-tree-shake-icons",
+  "buildCommand": "git clone https://github.com/flutter/flutter.git --depth 1 -b 3.44.2 && export PATH=$PATH:$(pwd)/flutter/bin && flutter config --enable-web && flutter --version && flutter pub get && flutter build web --release --no-tree-shake-icons",
   "outputDirectory": "build/web",
   "installCommand": "echo skip"
 }

@@ -1,9 +1,9 @@
 [build]
   command = """
-  git clone https://github.com/flutter/flutter.git --depth 1
+  git clone https://github.com/flutter/flutter.git --depth 1 -b 3.44.2
   export PATH="$PATH:`pwd`/flutter/bin"
   flutter config --enable-web
   flutter pub get
-  flutter build web --release
+  flutter build web --release --no-tree-shake-icons
   """
   publish = "build/web"
