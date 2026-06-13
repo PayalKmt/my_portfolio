@@ -241,52 +241,32 @@ class HomeView extends GetView<HomeController> {
                                   ? MainAxisAlignment.center
                                   : MainAxisAlignment.start,
                           children: [
-                            IconButton(
-                              onPressed:
-                                  () => controller.openUrl(
-                                    'https://www.linkedin.com/in/payal-kumawat-664973302/',
-                                  ),
-                              icon: Icon(
-                                Icons.link,
-                                color: AppColors.socialIconColor,
-                                size: isMobile ? Get.width * 0.06 : 40.sp,
-                              ),
+                            _socialTextIcon(
+                              label: 'in',
+                              url: 'https://www.linkedin.com/in/payal-kumawat-664973302/',
+                              color: const Color(0xFF0A66C2),
+                              isMobile: isMobile,
                             ),
-                            SizedBox(width: 20.w),
-                            IconButton(
-                              onPressed:
-                                  () => controller.openUrl(
-                                    'https://github.com/PayalKmt',
-                                  ),
-                              icon: Icon(
-                                Icons.developer_mode,
-                                color: AppColors.socialIconColor,
-                                size: isMobile ? Get.width * 0.06 : 40.sp,
-                              ),
+                            SizedBox(width: 12.w),
+                            _socialTextIcon(
+                              label: 'gh',
+                              url: 'https://github.com/PayalKmt',
+                              color: AppColors.textColor,
+                              isMobile: isMobile,
                             ),
-                            SizedBox(width: 20.w),
-                            IconButton(
-                              onPressed:
-                                  () => controller.openUrl(
-                                    'mailto:kumawatpayal2005513@gmail.com',
-                                  ),
-                              icon: Icon(
-                                Icons.email_outlined,
-                                color: AppColors.socialIconColor,
-                                size: isMobile ? Get.width * 0.06 : 40.sp,
-                              ),
+                            SizedBox(width: 12.w),
+                            _socialTextIcon(
+                              label: '@',
+                              url: 'mailto:kumawatpayal2005513@gmail.com',
+                              color: const Color(0xFFEA4335),
+                              isMobile: isMobile,
                             ),
-                            SizedBox(width: 20.w),
-                            IconButton(
-                              onPressed:
-                                  () => controller.openUrl(
-                                    'https://leetcode.com/u/kumawatpayal2005513/',
-                                  ),
-                              icon: Icon(
-                                Icons.terminal,
-                                color: AppColors.socialIconColor,
-                                size: isMobile ? Get.width * 0.06 : 40.sp,
-                              ),
+                            SizedBox(width: 12.w),
+                            _socialTextIcon(
+                              label: 'lc',
+                              url: 'https://leetcode.com/u/kumawatpayal2005513/',
+                              color: const Color(0xFFFFA116),
+                              isMobile: isMobile,
                             ),
                           ],
                         ),
@@ -407,6 +387,42 @@ class HomeView extends GetView<HomeController> {
             // Footer
             const Footer(),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _socialTextIcon({
+    required String label,
+    required String url,
+    required Color color,
+    required bool isMobile,
+  }) {
+    final double size = isMobile ? Get.width * 0.06 : 44.sp;
+    return GestureDetector(
+      onTap: () => controller.openUrl(url),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 180),
+          width: size * 1.4,
+          height: size * 1.4,
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(10.r),
+            border: Border.all(color: color.withValues(alpha: 0.5), width: 1.2),
+          ),
+          child: Center(
+            child: Text(
+              label,
+              style: TextStyle(
+                color: color,
+                fontSize: size * 0.52,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0.5,
+              ),
+            ),
+          ),
         ),
       ),
     );
