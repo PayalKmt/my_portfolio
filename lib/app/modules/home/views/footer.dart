@@ -7,6 +7,36 @@ import '../../../../utils/app_colors.dart';
 class Footer extends GetView<HomeController> {
   const Footer({super.key});
 
+  Widget _socialTextIcon(String label, String url, Color color, bool isMobile) {
+    final double size = isMobile ? Get.width * 0.055 : 32.sp;
+    return GestureDetector(
+      onTap: () => controller.openUrl(url),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: Container(
+          width: size * 1.4,
+          height: size * 1.4,
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(8.r),
+            border: Border.all(color: color.withValues(alpha: 0.5), width: 1.2),
+          ),
+          child: Center(
+            child: Text(
+              label,
+              style: TextStyle(
+                color: color,
+                fontSize: size * 0.52,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0.5,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   // Helper method to create quick link items
   Widget _quickLink(String title, bool isMobile) {
     return TextButton(
@@ -68,25 +98,13 @@ class Footer extends GetView<HomeController> {
                     Row(
                       mainAxisAlignment: isMobile ? MainAxisAlignment.center : MainAxisAlignment.start,
                       children: [
-                        IconButton(
-                          onPressed: () => controller.openUrl('https://www.linkedin.com/in/payal-kumawat-664973302/'),
-                          icon: Icon(Icons.social_distance, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 : 30.sp),
-                        ),
-                        SizedBox(width: 20.w),
-                        IconButton(
-                          onPressed: () => controller.openUrl('https://github.com/PayalKmt'),
-                          icon: Icon(Icons.code, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 :30.sp),
-                        ),
-                        SizedBox(width: 20.w),
-                        IconButton(
-                          onPressed: () => controller.openUrl('mailto:kumawatpayal2005513@gmail.com'),
-                          icon: Icon(Icons.email, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 :30.sp),
-                        ),
-                        SizedBox(width: 20.w),
-                        IconButton(
-                          onPressed: () => controller.openUrl('https://leetcode.com/u/kumawatpayal2005513/'),
-                          icon: Icon(Icons.code, color: AppColors.socialIconColor, size: isMobile ? Get.width * 0.035 :30.sp),
-                        ),
+                        _socialTextIcon('in', 'https://www.linkedin.com/in/payal-kumawat-664973302/', const Color(0xFF0A66C2), isMobile),
+                        SizedBox(width: 10.w),
+                        _socialTextIcon('gh', 'https://github.com/PayalKmt', AppColors.textColor, isMobile),
+                        SizedBox(width: 10.w),
+                        _socialTextIcon('@', 'mailto:kumawatpayal2005513@gmail.com', const Color(0xFFEA4335), isMobile),
+                        SizedBox(width: 10.w),
+                        _socialTextIcon('lc', 'https://leetcode.com/u/kumawatpayal2005513/', const Color(0xFFFFA116), isMobile),
                       ],
                     ),
                   ],
